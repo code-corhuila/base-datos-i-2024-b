@@ -1,0 +1,93 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Página-1" id="pRVBDppDbSMvA8BhDvx7">
+    <mxGraphModel dx="1050" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="s9DGU-QhAhirzHzRv_aX-1" target="s9DGU-QhAhirzHzRv_aX-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-1" value="Contexto" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="s9DGU-QhAhirzHzRv_aX-2" target="s9DGU-QhAhirzHzRv_aX-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-2" value="MER" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="220" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="s9DGU-QhAhirzHzRv_aX-4" target="s9DGU-QhAhirzHzRv_aX-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-4" target="s9DGU-QhAhirzHzRv_aX-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-4" value="MR (Lógico&amp;nbsp; -Físico)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="220" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-6" value="&lt;div&gt;Lógico&lt;/div&gt;Diagrama MR" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-8" value="&lt;div&gt;Físico&lt;/div&gt;* Motor BD&lt;div&gt;* SQL DDL&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="s9DGU-QhAhirzHzRv_aX-10" target="s9DGU-QhAhirzHzRv_aX-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-10" target="s9DGU-QhAhirzHzRv_aX-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.821;entryY=-0.023;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-10" target="s9DGU-QhAhirzHzRv_aX-28" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="810" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-10" value="Motores de Base de Datos" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="580" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-11" target="s9DGU-QhAhirzHzRv_aX-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-11" value="SQL (Realacionales)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="500" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-13" target="s9DGU-QhAhirzHzRv_aX-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-13" value="NOSql (No relacionales)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="s9DGU-QhAhirzHzRv_aX-15" target="s9DGU-QhAhirzHzRv_aX-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="s9DGU-QhAhirzHzRv_aX-15" target="s9DGU-QhAhirzHzRv_aX-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-15" target="s9DGU-QhAhirzHzRv_aX-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-15" value="&lt;div&gt;MySQL&lt;/div&gt;&lt;div&gt;POstgresql&lt;/div&gt;&lt;div&gt;SQLServer&lt;/div&gt;&lt;div&gt;SQLite&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="500" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-17" value="MongoDB&lt;div&gt;Casandra&lt;/div&gt;&lt;div&gt;Firebase&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-20" value="DDL" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="430" y="510" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-23" value="DML" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="430" y="540" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-25" value="OTROS" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="570" y="510" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.542;entryY=0.141;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="s9DGU-QhAhirzHzRv_aX-15" target="s9DGU-QhAhirzHzRv_aX-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9DGU-QhAhirzHzRv_aX-28" value="SMBD" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="707" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
