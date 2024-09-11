@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tema_1_Consultas_Basicas_en_SQL.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="tema-1-consultas-b%C3%A1sicas-en-sql">Tema 1: Consultas Básicas en SQL</h1>
+<p>Este tema cubre las consultas más básicas en SQL, tales como cómo seleccionar información de tablas, crear tablas y modificar datos.</p>
+<h2 id="%C3%ADndice">Índice</h2>
+<ol>
+<li><a href="#descripcion-del-tema">Descripción del Tema</a></li>
+<li><a href="#conceptos-clave">Conceptos Clave</a></li>
+<li><a href="#comandos-utilizados">Comandos Utilizados</a></li>
+<li><a href="#ejemplos-practicos">Ejemplos Prácticos</a>
+<ul>
+<li><a href="#crear-la-base-de-datos-y-las-tablas">Crear la base de datos y las tablas</a></li>
+<li><a href="#insertar-datos">Insertar Datos</a></li>
+<li><a href="#consultar-datos">Consultar Datos</a></li>
+<li><a href="#actualizar-datos">Actualizar Datos</a></li>
+<li><a href="#eliminar-datos">Eliminar Datos</a></li>
+</ul>
+</li>
+<li><a href="#ejercicios-propuestos">Ejercicios Propuestos</a></li>
+<li><a href="#referencias">Referencias</a></li>
+</ol>
+<h2 id="descripci%C3%B3n-del-tema">Descripción del Tema</h2>
+<p>SQL (Lenguaje de Consulta Estructurado) es un estándar para gestionar y manipular bases de datos relacionales. En este tema, aprenderás a escribir consultas básicas para crear y manipular datos en las tablas.</p>
+<h2 id="conceptos-clave">Conceptos Clave</h2>
+<ul>
+<li><strong>DDL (Data Definition Language)</strong>: Lenguaje de Definición de Datos, usado para definir y modificar la estructura de las bases de datos.</li>
+<li><strong>DML (Data Manipulation Language)</strong>: Lenguaje de Manipulación de Datos, usado para insertar, actualizar, eliminar y recuperar datos.</li>
+<li><strong>SELECT</strong>: Comando usado para consultar datos de tablas.</li>
+<li><strong>WHERE</strong>: Filtro que se utiliza para seleccionar filas específicas.</li>
+<li><strong>PRIMARY KEY</strong>: Una columna que identifica de manera única a cada fila en una tabla.</li>
+</ul>
+<h2 id="comandos-utilizados">Comandos Utilizados</h2>
+<ul>
+<li><strong>CREATE DATABASE</strong>: Crea una nueva base de datos.</li>
+<li><strong>CREATE TABLE</strong>: Crea una nueva tabla dentro de la base de datos.</li>
+<li><strong>INSERT INTO</strong>: Inserta nuevos registros en una tabla.</li>
+<li><strong>SELECT</strong>: Consulta datos en una tabla.</li>
+<li><strong>UPDATE</strong>: Actualiza registros existentes.</li>
+<li><strong>DELETE</strong>: Elimina registros existentes.</li>
+</ul>
+<h2 id="ejemplos-pr%C3%A1cticos">Ejemplos Prácticos</h2>
+<h3 id="crear-la-base-de-datos-y-las-tablas">Crear la base de datos y las tablas</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DATABASE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> ubicacion;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> ubicacion;
+<span class="hljs-keyword">USE</span> ubicacion;
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> continente(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTO_INCREMENT,
+    codigo <span class="hljs-built_in">INT</span> <span class="hljs-keyword">UNIQUE</span>,
+    nombre <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">UNIQUE</span>,
+    descripcion <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">250</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    estado <span class="hljs-built_in">BIT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> pais(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTO_INCREMENT,
+    codigo <span class="hljs-built_in">INT</span> <span class="hljs-keyword">UNIQUE</span>,
+    nombre <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    descripcion <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">250</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    estado <span class="hljs-built_in">BIT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+    continente_id <span class="hljs-built_in">INT</span>,
+    <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (continente_id) <span class="hljs-keyword">REFERENCES</span> continente(<span class="hljs-keyword">id</span>)
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> estado(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTO_INCREMENT,
+    codigo <span class="hljs-built_in">INT</span> <span class="hljs-keyword">UNIQUE</span>,
+    nombre <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    descripcion <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">250</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    estado <span class="hljs-built_in">BIT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+    pais_id <span class="hljs-built_in">INT</span>,
+    <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (pais_id) <span class="hljs-keyword">REFERENCES</span> pais(<span class="hljs-keyword">id</span>)
+);
+</div></code></pre>
+<h3 id="insertar-datos">Insertar Datos</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Insertar 10 registros en la tabla continente</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> continente (codigo, nombre, descripcion, estado) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1001</span>, <span class="hljs-string">'América del Norte'</span>, <span class="hljs-string">'Paises en el hemisferio norte del continente americano'</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">1002</span>, <span class="hljs-string">'América del Sur'</span>, <span class="hljs-string">'Paises en el hemisferio sur del continente americano'</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">1003</span>, <span class="hljs-string">'Europa'</span>, <span class="hljs-string">'Países del continente europeo'</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">1004</span>, <span class="hljs-string">'Asia'</span>, <span class="hljs-string">'Países del continente asiático'</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">1005</span>, <span class="hljs-string">'África'</span>, <span class="hljs-string">'Países del continente africano'</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">1006</span>, <span class="hljs-string">'Oceanía'</span>, <span class="hljs-string">'Países del continente de Oceanía'</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">1007</span>, <span class="hljs-string">'Antártida'</span>, <span class="hljs-string">'Continente helado'</span>, <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">-- Insertar 10 registros en la tabla pais</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> pais (codigo, nombre, descripcion, estado, continente_id) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">2001</span>, <span class="hljs-string">'Estados Unidos'</span>, <span class="hljs-string">'País de América del Norte'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">2002</span>, <span class="hljs-string">'Canadá'</span>, <span class="hljs-string">'País de América del Norte'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">2003</span>, <span class="hljs-string">'México'</span>, <span class="hljs-string">'País de América del Norte'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">2004</span>, <span class="hljs-string">'Brasil'</span>, <span class="hljs-string">'País de América del Sur'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">2005</span>, <span class="hljs-string">'Argentina'</span>, <span class="hljs-string">'País de América del Sur'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">2006</span>, <span class="hljs-string">'Colombia'</span>, <span class="hljs-string">'País de América del Sur'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">2007</span>, <span class="hljs-string">'Francia'</span>, <span class="hljs-string">'País de Europa'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>),
+(<span class="hljs-number">2008</span>, <span class="hljs-string">'Alemania'</span>, <span class="hljs-string">'País de Europa'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>),
+(<span class="hljs-number">2009</span>, <span class="hljs-string">'Japón'</span>, <span class="hljs-string">'País de Asia'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>),
+(<span class="hljs-number">2010</span>, <span class="hljs-string">'China'</span>, <span class="hljs-string">'País de Asia'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>);
+
+<span class="hljs-comment">-- Insertar 10 registros en la tabla estado</span>
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> estado (codigo, nombre, descripcion, estado, pais_id) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">3001</span>, <span class="hljs-string">'California'</span>, <span class="hljs-string">'Estado en Estados Unidos'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">3002</span>, <span class="hljs-string">'Texas'</span>, <span class="hljs-string">'Estado en Estados Unidos'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">3003</span>, <span class="hljs-string">'Ontario'</span>, <span class="hljs-string">'Provincia en Canadá'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">3004</span>, <span class="hljs-string">'Quebec'</span>, <span class="hljs-string">'Provincia en Canadá'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">3005</span>, <span class="hljs-string">'São Paulo'</span>, <span class="hljs-string">'Estado en Brasil'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>),
+(<span class="hljs-number">3006</span>, <span class="hljs-string">'Río de Janeiro'</span>, <span class="hljs-string">'Estado en Brasil'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>),
+(<span class="hljs-number">3007</span>, <span class="hljs-string">'Buenos Aires'</span>, <span class="hljs-string">'Provincia en Argentina'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>),
+(<span class="hljs-number">3008</span>, <span class="hljs-string">'Antioquia'</span>, <span class="hljs-string">'Departamento en Colombia'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>),
+(<span class="hljs-number">3009</span>, <span class="hljs-string">'Île-de-France'</span>, <span class="hljs-string">'Región en Francia'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">7</span>),
+(<span class="hljs-number">3010</span>, <span class="hljs-string">'Baviera'</span>, <span class="hljs-string">'Estado en Alemania'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">8</span>);
+</div></code></pre>
+<h3 id="consultar-datos">Consultar Datos</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Consultar todos los continentes</span>
+<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> continente;
+
+<span class="hljs-comment">-- Consultar los países de América del Norte</span>
+<span class="hljs-keyword">SELECT</span> nombre <span class="hljs-keyword">FROM</span> pais <span class="hljs-keyword">WHERE</span> continente_id = <span class="hljs-number">1</span>;
+
+<span class="hljs-comment">-- Consultar los estados de Brasil</span>
+<span class="hljs-keyword">SELECT</span> nombre <span class="hljs-keyword">FROM</span> estado <span class="hljs-keyword">WHERE</span> pais_id = <span class="hljs-number">4</span>;
+</div></code></pre>
+<h3 id="actualizar-datos">Actualizar Datos</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Actualizar el estado de un continente</span>
+<span class="hljs-keyword">UPDATE</span> continente 
+<span class="hljs-keyword">SET</span> estado = <span class="hljs-number">0</span> 
+<span class="hljs-keyword">WHERE</span> codigo = <span class="hljs-number">1003</span>;
+
+<span class="hljs-comment">-- Actualizar la descripción de un país</span>
+<span class="hljs-keyword">UPDATE</span> pais 
+<span class="hljs-keyword">SET</span> descripcion = <span class="hljs-string">'País en Sudamérica'</span>
+<span class="hljs-keyword">WHERE</span> codigo = <span class="hljs-number">2006</span>;
+</div></code></pre>
+<h3 id="eliminar-datos">Eliminar Datos</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">-- Eliminar un estado</span>
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> estado <span class="hljs-keyword">WHERE</span> codigo = <span class="hljs-number">3010</span>;
+
+<span class="hljs-comment">-- Eliminar un país</span>
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> pais <span class="hljs-keyword">WHERE</span> codigo = <span class="hljs-number">2005</span>;
+</div></code></pre>
+<h2 id="ejercicios-propuestos">Ejercicios Propuestos</h2>
+<ol>
+<li>Inserta más registros en las tablas <code>continente</code>, <code>pais</code> y <code>estado</code>, hasta alcanzar al menos 10 continentes y 20 países.</li>
+<li>Realiza una consulta que muestre los nombres de los países y los continentes a los que pertenecen.</li>
+<li>Actualiza el nombre de uno de los continentes y consulta los cambios.</li>
+<li>Elimina un país y sus estados relacionados, y verifica que la eliminación sea correcta.</li>
+</ol>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><strong>Documentación oficial de MySQL</strong>: <a href="https://dev.mysql.com/doc/">https://dev.mysql.com/doc/</a></li>
+</ul>
+
+</body>
+</html>
