@@ -1,0 +1,43 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Página-1" id="wObPmkAxYD9PAaxw80ji">
+    <mxGraphModel dx="488" dy="333" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aQzufj0Kl179tfjcCTew-1" value="Proyecto - Biblioteca" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;horizontal=0;horizontalStack=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="130" width="500" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-2" value="Must Have" style="swimlane;startSize=20;" vertex="1" parent="aQzufj0Kl179tfjcCTew-1">
+          <mxGeometry x="20" width="120" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-9" value="Crear Base de Datos" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aQzufj0Kl179tfjcCTew-2">
+          <mxGeometry x="20" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-10" value="Registro de Libros" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aQzufj0Kl179tfjcCTew-2">
+          <mxGeometry x="20" y="90" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-11" value="Historial de Prestamo" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aQzufj0Kl179tfjcCTew-2">
+          <mxGeometry x="20" y="140" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-12" value="Registro de Usuario" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aQzufj0Kl179tfjcCTew-2">
+          <mxGeometry x="20" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-13" value="Notificar al usuario de vencimiento o por vencer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aQzufj0Kl179tfjcCTew-2">
+          <mxGeometry x="5" y="250" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-3" value="Should Have" style="swimlane;startSize=20;" vertex="1" parent="aQzufj0Kl179tfjcCTew-1">
+          <mxGeometry x="140" width="120" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-4" value="Could Have" style="swimlane;startSize=20;" vertex="1" parent="aQzufj0Kl179tfjcCTew-1">
+          <mxGeometry x="260" width="120" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-14" value="Recomendar Libros" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aQzufj0Kl179tfjcCTew-4">
+          <mxGeometry x="30" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aQzufj0Kl179tfjcCTew-5" value="Won’t Have" style="swimlane;startSize=20;" vertex="1" parent="aQzufj0Kl179tfjcCTew-1">
+          <mxGeometry x="380" width="120" height="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
