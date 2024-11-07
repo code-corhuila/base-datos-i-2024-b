@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API ServicioCliente con Bootstrap</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Gestión de Servicio Cliente</h2>
+    <form id="crudForm">
+        <!-- Campo oculto para almacenar el ID del servicio cliente en edición -->
+        <input type="hidden" id="id" name="id">
+
+        <div class="form-group">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" name="cantidad" required>
+        </div>
+
+        <div class="form-group">
+            <label for="totalPagar">Total a Pagar</label>
+            <input type="number" step="0.01" class="form-control" id="totalPagar" name="totalPagar" required>
+        </div>
+
+        <div class="form-group">
+            <label for="clienteId">Cliente</label>
+            <select class="form-control" id="clienteId" name="clienteId" required>
+                <!-- Opciones de clientes se cargarán aquí -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="servicioId">Servicio</label>
+            <select class="form-control" id="servicioId" name="servicioId" required>
+                <!-- Opciones de servicios se cargarán aquí -->
+            </select>
+        </div>
+
+        <div class="d-flex mb-3">
+            <button type="button" class="btn btn-primary mx-2" id="submitButton" onclick="createOrUpdate()">Guardar</button>
+            <button type="button" class="btn btn-secondary mx-2" onclick="resetForm()">Limpiar</button>
+            <a href="../dashboard.html" class="btn btn-primary mx-2">Regresar</a>
+        </div>
+    </form>
+
+    <hr>
+    <h3>Lista de Servicios Clientes</h3>
+    <table class="table table-bordered" id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cantidad</th>
+                <th>Total a Pagar</th>
+                <th>Cliente ID</th>
+                <th>Servicio ID</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+            <!-- Los registros de servicios clientes se cargarán aquí -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../js/ServicioCliente.js"></script>
+</body>
+</html>
