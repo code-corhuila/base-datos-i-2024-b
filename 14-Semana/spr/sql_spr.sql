@@ -32,6 +32,7 @@ DELIMITER //
 --      - p_path        : Ruta de la vista.
 --      - p_created_by  : ID del usuario que crea el registro.
 -- -----------------------------------------------------------------------------
+
 CREATE PROCEDURE spr_create_view(
     IN p_code VARCHAR(20),
     IN p_description VARCHAR(255),
